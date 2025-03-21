@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    font-family: "Winky Sans", sans-serif;
+    font-size: larger;
+}
+
+#lpb{
+    font-style: italic;
+}
+
+html{
+    background-image: url("pokemons.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#pokemon {
+    display: block;
+    margin:auto;
+    width: 500px;
+    border-radius: 30px;
+    padding: 10px;
+    border: solid 10px rgb(38, 38, 38);
+    margin-bottom: 5px;
+    background-color: rgb(108, 118, 112);
+    color: rgb(200, 217, 199);
+    text-align: center;
+}
+
+.type img {
+    width: 10%;
+
+}
+
+#iconePokemon {
+    width: 25%;
+    margin-top: 50px;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.box {
+    width: 500px;
+    height: 70vh;
+    margin: auto;
+    overflow-y: scroll;
+    text-align: center;
+    border-radius: 30px;
+    border: solid rgb(38, 38, 38) 10px;
+    background-color: rgb(75, 80, 77);
+    color: rgb(200, 217, 199);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}

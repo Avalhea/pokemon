@@ -38,16 +38,33 @@ function selectTypeIcon(type) {
 document.querySelector('#pokemon').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         let pokemon = $('#pokemon').val().toLowerCase();
-        afficher(pokemon)
+        afficher(pokemon);
+        
         $("#left").show();
         $("#right").show();
     }
 });
+
+$(document).ready(function () { 
+    afficher('1'); 
+    $("#left").show();
+    $("#right").show();
+});
+
+
 let pokemonId;
 function afficher(pokemon) {
 
-    if (pokemon === "le kingoss") {
+    if (pokemon === "king") {
         pokemon = "blaziken"
+    }
+
+    if (pokemon === "queen") {
+        pokemon = "mismagius"
+    }
+
+    if(pokemon === "") {
+        pokemon = 1;
     }
 
     $.ajax(
@@ -57,9 +74,9 @@ function afficher(pokemon) {
         }
     ).done(
         function (donnees) {
-            $('#iconePokemon').attr("src",(donnees.sprites.front_default));
+            $(".pokemon-info, #left, #right").show();
 
-            console.log(donnees.types[1]);
+            $('#iconePokemon').attr("src",(donnees.sprites.front_default));
 
             let lien1 = selectTypeIcon(donnees.types[0].type.name);
             let lien2;
@@ -71,22 +88,23 @@ function afficher(pokemon) {
 
             }
 
-            else {
-                $("#iconeType2Pokemon").hide();
-            }
 
             $('#iconeType1Pokemon').attr("src",lien1);
 
             $("#iconeType1Pokemon").show();
 
-            $('#nomPokemon').text("Nom : " + donnees.name);
-            $('#poidsPokemon').text("Poids : " + donnees.weight);
+            $('#nomPokemon').text("Name : " + donnees.name);
+            $('#poidsPokemon').text("Weight : " + donnees.weight/10 + "Kg");
             pokemonId = donnees.id;
             $('#idPokemon').text("ID : " + donnees.id);
 
-        }
+    }).fail(function () {
+        // ❌ Hide everything if Pokémon is not found
+        $(".pokemon-info, #left, #right").hide();
 
-    );
+        // Optionally display a message (or remove it)
+        alert("wtf");
+    });
 }
 
 
