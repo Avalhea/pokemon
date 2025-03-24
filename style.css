@@ -1,32 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+@font-face {
+    font-family: 'Priska';
+    src: url('Priska-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 *{
-    font-family: "Winky Sans", sans-serif;
+    font-family: Priska;
     font-size: larger;
+    font-weight: normal;
+    color: rgb(252, 187, 191);
+    border-color: rgb(231, 139, 147) !important;
+    
+}
+
+audio {
+    border-radius: 30px;
+    border: 5px solid rgb(226, 209, 209) !important;
+}
+
+.box {
+    -webkit-box-shadow: 5px 5px 0px 0px rgb(254, 163, 170), 
+    10px 10px 0px 0px rgb(252, 182, 187), 
+    15px 15px 0px 0px rgb(250, 200, 204), 
+    20px 20px 0px 0px rgb(248, 218, 221), 
+    25px 25px 0px 0px rgb(246, 230, 234), 
+    5px 0px 2px 5px rgba(0,0,0,0); 
+
+    box-shadow: 5px 5px 0px 0px rgb(254, 163, 170), 
+    10px 10px 0px 0px rgb(252, 182, 187), 
+    15px 15px 0px 0px rgb(250, 200, 204), 
+    20px 20px 0px 0px rgb(248, 218, 221), 
+    25px 25px 0px 0px rgb(246, 230, 234), 
+    5px 0px 2px 5px rgba(0,0,0,0);
 }
 
 #lpb{
     font-style: italic;
+    color: rgb(77, 77, 77);
+}
+
+a {
+    text-decoration: none;
+    
 }
 
 html{
-    background-image: url("pokemons.gif");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-image: url("slowpoke.jpg");
+    background-blend-mode: multiply;
+    background-repeat: repeat;
+    background-size: round;
+    background-color: rgba(61, 61, 61, 0.267);
 }
 
 #pokemon {
+    color: rgb(224, 224, 224);
+    outline: none;
     display: block;
     margin:auto;
     width: 500px;
-    border-radius: 30px;
+    border-radius: 30px 30px 0 0;
     padding: 10px;
-    border: solid 10px rgb(38, 38, 38);
-    margin-bottom: 5px;
-    background-color: rgb(108, 118, 112);
-    color: rgb(200, 217, 199);
-    text-align: center;
+    border: solid 8px rgb(0, 0, 0);
+    /* margin-bottom: 5px; */
+    background-color: rgb(32, 32, 32);
+    text-align: justify;
+    -webkit-box-shadow: 5px 5px 0px 0px rgb(254, 163, 170), 
+                    10px 10px 0px 0px rgb(252, 182, 187), 
+                    15px 15px 0px 0px rgb(250, 200, 204), 
+                    20px 20px 0px 0px rgb(248, 218, 221), 
+                    25px 25px 0px 0px rgb(246, 230, 234), 
+                    5px 0px 2px 5px rgba(0,0,0,0); 
+
+    box-shadow: 5px 5px 0px 0px rgb(254, 163, 170), 
+                10px 10px 0px 0px rgb(252, 182, 187), 
+                15px 15px 0px 0px rgb(250, 200, 204), 
+                20px 20px 0px 0px rgb(248, 218, 221), 
+                25px 25px 0px 0px rgb(246, 230, 234), 
+                5px 0px 2px 5px rgba(0,0,0,0);
+
+    border-bottom: 0;
+    z-index: 1000;
 }
 
 .type img {
@@ -36,25 +91,43 @@ html{
 
 #iconePokemon {
     width: 25%;
-    margin-top: 50px;
+}
+
+#iconePokemon:hover {
+    animation-name: shake;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
 }
 
 .wrapper {
     width: 100%;
 }
 
+#nomPokemon {
+    color: rgb(207, 207, 207) !important;
+}
+
 .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 500px;
-    height: 70vh;
+    height: 600px;
     margin: auto;
+    padding: 10px;
     overflow-y: scroll;
     text-align: center;
-    border-radius: 30px;
-    border: solid rgb(38, 38, 38) 10px;
-    background-color: rgb(75, 80, 77);
-    color: rgb(200, 217, 199);
+    border-radius: 0 0 30px 30px;
+    border: solid rgb(0, 0, 0) 8px;
+    background-color: rgb(46, 46, 46);
     text-transform: uppercase;
-    text-align: center;
+
+}
+
+.fleches {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 button {
@@ -64,4 +137,191 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+#poidsPokemon :hover {
+    transform: scale(110%);
+}
+
+
+/* From Uiverse.io by Galahhad */ 
+.ui-btn {
+    --btn-default-bg: rgb(41, 41, 41);
+    --btn-padding: 15px 20px;
+    --btn-hover-bg: rgb(51, 51, 51);
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: rgb(252, 187, 191);
+    --font-size: 16px;
+    /* 👆 this field should not be empty */
+    --font-weight: 400;
+    --font-family: Menlo,Roboto Mono,monospace;
+    /* 👆 this field should not be empty */
+  }
+  
+  /* button settings 👆 */
+  
+  .ui-btn * {
+    color: rgb(102, 102, 102);
+  }
+
+  .ui-btn {
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border: none;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+  }
+  
+  .ui-btn span {
+    letter-spacing: var(--btn-letter-spacing);
+    transition: var(--btn-transition);
+    box-sizing: border-box;
+    position: relative;
+    background: inherit;
+  }
+  
+  .ui-btn span::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    background: inherit;
+  }
+  
+  .ui-btn:hover, .ui-btn:focus {
+    background: var(--btn-hover-bg);
+  }
+  
+  .ui-btn:hover span, .ui-btn:focus span {
+    color: var(--hover-btn-color);
+  }
+
+  .ui-btn:hover {
+    * {
+        color: rgb(207, 207, 207);
+    }
+  }
+  
+  .ui-btn:hover span::before, .ui-btn:focus span::before {
+    animation: chitchat linear both var(--btn-animation-duration);
+  }
+  
+  @keyframes chitchat {
+    0% {
+      content: "#";
+    }
+  
+    5% {
+      content: ".";
+    }
+  
+    10% {
+      content: "^{";
+    }
+  
+    15% {
+      content: "-!";
+    }
+  
+    20% {
+      content: "#$_";
+    }
+  
+    25% {
+      content: "№:0";
+    }
+  
+    30% {
+      content: "#{+.";
+    }
+  
+    35% {
+      content: "@}-?";
+    }
+  
+    40% {
+      content: "?{4@%";
+    }
+  
+    45% {
+      content: "=.,^!";
+    }
+  
+    50% {
+      content: "?2@%";
+    }
+  
+    55% {
+      content: "\;1}]";
+    }
+  
+    60% {
+      content: "?{%:%";
+      right: 0;
+    }
+  
+    65% {
+      content: "|{f[4";
+      right: 0;
+    }
+  
+    70% {
+      content: "{4%0%";
+      right: 0;
+    }
+  
+    75% {
+      content: "'1_0<";
+      right: 0;
+    }
+  
+    80% {
+      content: "{0%";
+      right: 0;
+    }
+  
+    85% {
+      content: "]>'";
+      right: 0;
+    }
+  
+    90% {
+      content: "4";
+      right: 0;
+    }
+  
+    95% {
+      content: "♥";
+      right: 0;
+    }
+  
+    100% {
+      content: "";
+      right: 0;
+    }
+  }
+
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }

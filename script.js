@@ -52,20 +52,49 @@ $(document).ready(function () {
 });
 
 
+function getPrevNext(pokemon, id) {
+    $.ajax(
+        {
+            url: 'https://pokeapi.co/api/v2/pokemon/'+ pokemon,
+            method: 'GET'
+        }
+    ).done(
+        function (data) { 
+            $(id).show();
+            $(id).text(data.name);
+            console.log(data.id)
+        }
+).fail(function() {
+    $('#left').hide();
+})}
+
+
 let pokemonId;
 function afficher(pokemon) {
 
-    if (pokemon === "king") {
-        pokemon = "blaziken"
-    }
+    $('#lpb').text("");
 
-    if (pokemon === "queen") {
-        pokemon = "mismagius"
+    switch(pokemon) {
+        case "king":
+            pokemon = "blaziken";
+            $('#lpb').text("king");
+            break;
+        case "queen":
+            pokemon = "mismagius";
+            $('#lpb').text("queen");
+            break;
+        case "big man":
+            pokemon = "blastoise";
+            $('#lpb').text("big man");
+            break;
+        case "slowpoke":
+            $('#lpb').html('<a href="https://youtu.be/Ce5mRvkAePU" target="_blank">click! click!</a>');
+            break;
+        case "":
+            pokemon = 1;
+            break;
     }
-
-    if(pokemon === "") {
-        pokemon = 1;
-    }
+    
 
     $.ajax(
         {
@@ -87,23 +116,30 @@ function afficher(pokemon) {
                 $('#iconeType2Pokemon').attr("src",lien2);
 
             }
+            else {
+                $("#iconeType2Pokemon").hide();
+            }
 
 
             $('#iconeType1Pokemon').attr("src",lien1);
 
             $("#iconeType1Pokemon").show();
 
-            $('#nomPokemon').text("Name : " + donnees.name);
-            $('#poidsPokemon').text("Weight : " + donnees.weight/10 + "Kg");
+            $('#nomPokemon').text(donnees.name);
+
+            $('#poidsPokemon').text(donnees.weight/10 + "Kg");
             pokemonId = donnees.id;
             $('#idPokemon').text("ID : " + donnees.id);
+
+            getPrevNext(donnees.id-1, "#prev");
+            getPrevNext(donnees.id+1, "#next");
 
     }).fail(function () {
         // ❌ Hide everything if Pokémon is not found
         $(".pokemon-info, #left, #right").hide();
 
         // Optionally display a message (or remove it)
-        alert("wtf");
+        alert("that pokemon does NOT exist :( make sure you enter the name in english");
     });
 }
 

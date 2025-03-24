@@ -18,6 +18,8 @@
 
 <body>
 
+
+
 <figure>
     <audio loop controls
             src="ost.mp3">
@@ -47,8 +49,18 @@
             <div id="poidsPokemon"></div>
 
             <div class="fleches">
-                <button id="left" onclick="precedent()">⬅️</button>
-                <button id="right" onclick="suivant  ()">➡️</button>
+
+                <button id="left" onclick="precedent()" class="ui-btn">
+                    <span>
+                      <div id="prev"></div> 
+                    </span>
+                  </button>
+                  <button id="right" onclick="suivant  ()"class="ui-btn">
+                    <span>
+                       <div id="next"></div>
+                    </span>
+                  </button>
+
                 <br>
                 <br>
             </div>
