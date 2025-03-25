@@ -1,0 +1,43 @@
+/* General Styling */
+* {
+    color: #95bdd8;
+    border-color: #1a89d3 !important;
+}
+
+/* HTML Background */
+html {
+    background-image: url("../images/blastoise.png");
+}
+
+/* Audio Styling */
+audio {
+    border-radius: 30px;
+    border: 5px solid transparent;
+    background: linear-gradient(45deg, rgb(95, 97, 170), rgb(0, 0, 0)) border-box;
+    mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+}
+
+/* Box and Pokemon Styling */
+/* Box and Pokemon Styling */
+.box, #pokemon {
+    -webkit-box-shadow: 
+        5px 5px 0px 0px #289FED, 
+        10px 10px 0px 0px #5FB8FF, 
+        15px 15px 0px 0px #A1D8FF, 
+        20px 20px 0px 0px #CAE6FF, 
+        25px 25px 0px 0px #E1EEFF, 
+        5px 0px 2px 5px rgba(0,0,0,0);
+        
+    box-shadow: 
+        5px 5px 0px 0px #289FED, 
+        10px 10px 0px 0px #5FB8FF, 
+        15px 15px 0px 0px #A1D8FF, 
+        20px 20px 0px 0px #CAE6FF, 
+        25px 25px 0px 0px #E1EEFF, 
+        5px 0px 2px 5px rgba(0,0,0,0);
+}
+
+/* UI Button Styling */
+.ui-btn {
+    --hover-btn-color: #289FED;
+}

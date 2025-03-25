@@ -2,79 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta
-            name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Pokedex</title>
-    <script
-            src="https://kit.fontawesome.com/7d15da244a.js"
-            crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="style.css">
 
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
 
-<!-- From Uiverse.io by gharsh11032000 --> 
-<label class="switch">
-    <input type="checkbox">
-    <span class="slider"></span>
-  </label>
+    <!-- Theme Toggle Switch -->
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
 
-<figure>
-    <audio loop controls
-            src="ost.mp3">
-        Your browser does not support the
-        <code>audio</code> element.
-    </audio>
-</figure>
+    <!-- Audio Player -->
+    <figure>
+        <audio loop controls src="ost.mp3">
+            Your browser does not support the <code>audio</code> element.
+        </audio>
+    </figure>
 
-<div class="container">
-    <div class="wrapper">
-        <input
-                type="text"
-                name="recherche"
-                id="pokemon"
-        />
-    </div>
+    <!-- Pokemon Search Section -->
+    <div class="container">
+        <div class="wrapper">
+            <input type="text" name="recherche" id="pokemon" />
+        </div>
+
+        <!-- Pokemon Info Box -->
         <div class="box">
-<div class="pokemon-info">
-            <img src="" alt="" id="iconePokemon">
-            <div class="type">
-                <img src="" alt="" id="iconeType1Pokemon">
-                <img src="" alt="" id="iconeType2Pokemon">
+            <div class="pokemon-info">
+                <img src="" alt="" id="iconePokemon">
+
+                <div class="type">
+                    <img src="" alt="" id="iconeType1Pokemon">
+                    <img src="" alt="" id="iconeType2Pokemon">
+                </div>
+
+                <div id="lpb"></div>
+                <div id="nomPokemon"></div>
+                <div id="idPokemon"></div>
+                <div id="poidsPokemon"></div>
+
+                <!-- Navigation Buttons -->
+                <div class="fleches">
+                    <button id="left" class="ui-btn">
+                        <span>
+                            <div id="prev"></div> 
+                        </span>
+                    </button>
+                    <button id="right" class="ui-btn">
+                        <span>
+                            <div id="next"></div>
+                        </span>
+                    </button>
+                </div>
             </div>
-            <div id="lpb"></div>
-            <div id="nomPokemon"></div>
-            <div id="idPokemon"></div>
-            <div id="poidsPokemon"></div>
+        </div>
+    </div>
 
-            <div class="fleches">
-
-                <button id="left" onclick="precedent()" class="ui-btn">
-                    <span>
-                      <div id="prev"></div> 
-                    </span>
-                  </button>
-                  <button id="right" onclick="suivant  ()"class="ui-btn">
-                    <span>
-                       <div id="next"></div>
-                    </span>
-                  </button>
-
-                <br>
-                <br>
-            </div>
-        </div></div>
-
-
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="script.js"></script>
+    <!-- JS Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
