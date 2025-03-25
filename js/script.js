@@ -128,7 +128,7 @@ $(document).ready(() => {
             $("<link>", {
                 rel: "stylesheet",
                 id: themeStylesheetId,
-                href: "/CSS/blastoise.css"  
+                href: "CSS/blastoise.css"  
             }).appendTo("head");
         }
         localStorage.setItem("theme", "blastoise");
