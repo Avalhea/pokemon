@@ -128,7 +128,7 @@ $(document).ready(() => {
             $("<link>", {
                 rel: "stylesheet",
                 id: themeStylesheetId,
-                href: "./css/blastoise.css"
+                href: "/CSS/blastoise.css"  
             }).appendTo("head");
         }
         localStorage.setItem("theme", "blastoise");
@@ -148,6 +148,7 @@ $(document).ready(() => {
         this.checked ? enableTheme() : disableTheme();
     });
 });
+
 });
 
 
