@@ -76,16 +76,30 @@ function afficher(pokemon) {
 
     switch(pokemon) {
         case "king":
+        case "blaziken": 
+        case "the king":
             pokemon = "blaziken";
             $('#lpb').text("king");
             break;
         case "queen":
+        case "mismagius": 
+        case "the queen":
+        case "429":
             pokemon = "mismagius";
             $('#lpb').text("queen");
             break;
         case "big man":
+        case "big man blastoise":
             pokemon = "blastoise";
             $('#lpb').text("big man");
+            break;
+        case "caratroc":
+        case "shuckle":
+        case "god": 
+        case "the best":
+        case "213":
+            pokemon = "shuckle";
+            $('#lpb').text("god");
             break;
         case "slowpoke":
             $('#lpb').html('<a href="https://youtu.be/Ce5mRvkAePU" target="_blank">click! click!</a>');
@@ -158,3 +172,44 @@ function suivant() {
     }
 
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const themeToggle = document.querySelector(".switch input");
+    const themeStylesheetId = "blastoise-theme";
+
+    // Function to enable the Blastoise theme
+    function enableTheme() {
+        if (!document.getElementById(themeStylesheetId)) {
+            let link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.id = themeStylesheetId;
+            link.href = "blastoise.css";
+            document.head.appendChild(link);
+        }
+        localStorage.setItem("theme", "blastoise");
+    }
+
+    // Function to disable the Blastoise theme
+    function disableTheme() {
+        let themeStylesheet = document.getElementById(themeStylesheetId);
+        if (themeStylesheet) {
+            themeStylesheet.remove();
+        }
+        localStorage.setItem("theme", "default");
+    }
+
+    // Load the saved theme on page load
+    if (localStorage.getItem("theme") === "blastoise") {
+        enableTheme();
+        themeToggle.checked = true;
+    }
+
+    // Event listener for theme toggle switch
+    themeToggle.addEventListener("change", function () {
+        if (this.checked) {
+            enableTheme();
+        } else {
+            disableTheme();
+        }
+    });
+});
