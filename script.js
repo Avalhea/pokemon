@@ -62,7 +62,6 @@ function getPrevNext(pokemon, id) {
         function (data) { 
             $(id).show();
             $(id).text(data.name);
-            console.log(data.id)
         }
 ).fail(function() {
     $('#left').hide();
