@@ -47,6 +47,8 @@ audio {
   margin: auto;
   padding: 10px;
   overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
   text-align: center;
   border-radius: 0 0 30px 30px;
   background-color: rgb(46, 46, 46);
@@ -106,9 +108,16 @@ audio {
   width: 10%;
 }
 
+
+
 /* Weight Hover */
+#poidsPokemon {
+  transition: 0.5s;
+}
+
 #poidsPokemon:hover {
   transform: scale(110%);
+  transition: 0.5s;
 }
 
 /* Fleche Styles */
